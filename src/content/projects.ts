@@ -15,6 +15,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/username/cloudsync-dashboard",
     liveUrl: "https://cloudsync-demo.vercel.app",
     images: ["/projects/cloudsync-1.png"],
+    featured: true,
   },
   {
     title: "Forge CLI",
@@ -28,6 +29,7 @@ export const projects: Project[] = [
       "Published on npm with 2k+ weekly downloads",
     ],
     githubUrl: "https://github.com/username/forge-cli",
+    featured: true,
   },
   {
     title: "Mealplan AI",
@@ -43,5 +45,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/username/mealplan-ai",
     liveUrl: "https://mealplan-ai.app",
     images: ["/projects/mealplan-1.png", "/projects/mealplan-2.png"],
+    featured: true,
   },
 ];
