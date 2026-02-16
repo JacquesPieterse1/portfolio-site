@@ -1,24 +1,25 @@
 import { projects } from "@/content/projects";
+import { ProjectFilters } from "@/components/projects/project-filters";
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <h1 className="text-4xl font-bold">Projects</h1>
-      <ul className="mt-8 space-y-6">
-        {projects.map((project) => (
-          <li key={project.slug}>
-            <h2 className="text-xl font-semibold">{project.title}</h2>
-            <p className="mt-1 text-muted-foreground">{project.description}</p>
-            <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
-              {project.stack.map((tech) => (
-                <span key={tech} className="rounded bg-muted px-2 py-0.5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <section className="py-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+            Work
+          </p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight">Projects</h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            A collection of things I&apos;ve built — from open-source tools to
+            full-stack applications.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <ProjectFilters projects={projects} />
+        </div>
+      </div>
+    </section>
   );
 }
