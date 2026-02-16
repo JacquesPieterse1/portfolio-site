@@ -8,4 +8,10 @@ export interface Project {
   liveUrl?: string;
   images?: string[];
   featured?: boolean;
+
+  // Case study fields
+  problem?: string;
+  solution?: string;
+  features?: string[];
+  learnings?: string[];
 }

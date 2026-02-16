@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
 import type { Project } from "@/types";
@@ -20,7 +21,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="flex h-full flex-col">
       <CardHeader>
-        <CardTitle className="text-lg">{project.title}</CardTitle>
+        <CardTitle className="text-lg">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="hover:underline"
+          >
+            {project.title}
+          </Link>
+        </CardTitle>
         <CardDescription className="line-clamp-3">
           {project.description}
         </CardDescription>
