@@ -19,7 +19,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="flex h-full flex-col">
+    <Card className="flex h-full flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <CardHeader>
         <CardTitle className="text-lg">
           <Link

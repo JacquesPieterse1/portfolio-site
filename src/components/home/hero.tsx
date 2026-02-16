@@ -1,28 +1,65 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 const { hero } = siteConfig;
 
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
+
 export function Hero() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="relative overflow-hidden py-24 sm:py-32">
+      {/* Soft gradient blob */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 size-[600px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+        <motion.div
+          className="max-w-2xl"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.p
+            variants={item}
+            className="text-sm font-semibold uppercase tracking-widest text-muted-foreground"
+          >
             {siteConfig.name}
-          </p>
+          </motion.p>
 
-          <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <motion.h1
+            variants={item}
+            className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+          >
             {hero.headline}
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+          <motion.p
+            variants={item}
+            className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl"
+          >
             {hero.subheadline}
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <motion.div
+            variants={item}
+            className="mt-10 flex flex-col gap-4 sm:flex-row"
+          >
             <Button asChild size="lg">
               <Link href={hero.cta.primary.href}>
                 {hero.cta.primary.label}
@@ -34,8 +71,8 @@ export function Hero() {
                 {hero.cta.secondary.label}
               </Link>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

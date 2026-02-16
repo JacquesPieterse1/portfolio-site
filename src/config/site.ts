@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Jacques Pieterse",
   title: "Portfolio",
+  url: "https://jacquespieterse.dev",
   description:
     "Full-stack developer crafting fast, accessible web experiences.",
 
@@ -20,6 +21,8 @@ export const siteConfig = {
     { value: "React & Next.js", label: "Primary Stack" },
     { value: "AWS Certified", label: "Cloud" },
   ],
+
+  email: "hello@jacquespieterse.dev",
 
   social: {
     github: "https://github.com",

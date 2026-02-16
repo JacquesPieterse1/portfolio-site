@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 const { about, social, name } = siteConfig;
 
 export const metadata: Metadata = {
-  title: `About | ${siteConfig.title}`,
+  title: "About",
   description: `Learn more about ${name} — experience, skills, and background.`,
 };
 

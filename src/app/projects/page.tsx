@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+
 import { projects } from "@/content/projects";
 import { ProjectFilters } from "@/components/projects/project-filters";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "A collection of projects — from open-source tools to full-stack applications.",
+};
 
 export default function ProjectsPage() {
   return (

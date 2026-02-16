@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { siteConfig } from "@/config/site";
 import { Separator } from "@/components/ui/separator";
 
@@ -9,7 +13,18 @@ export function ProofStrip() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-8 py-12 sm:grid-cols-4">
           {items.map((item, i) => (
-            <div key={i} className="relative text-center">
+            <motion.div
+              key={i}
+              className="relative text-center"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                ease: "easeOut" as const,
+                delay: i * 0.08,
+              }}
+            >
               {/* Vertical divider between items (desktop only) */}
               {i > 0 && (
                 <Separator
@@ -23,7 +38,7 @@ export function ProofStrip() {
               <p className="mt-1 text-sm text-muted-foreground">
                 {item.label}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
