@@ -16,10 +16,10 @@ export const siteConfig = {
   },
 
   proofStrip: [
-    { value: "5+", label: "Years Experience" },
+    { value: "2", label: "Years Experience" },
     { value: "30+", label: "Projects Shipped" },
     { value: "React & Next.js", label: "Primary Stack" },
-    { value: "AWS Certified", label: "Cloud" },
+    { value: "Microsoft Certified", label: "Cloud" },
   ],
 
   email: "hello@jacquespieterse.dev",
