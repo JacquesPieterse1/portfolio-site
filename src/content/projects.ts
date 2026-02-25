@@ -2,35 +2,35 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "CloudSync Dashboard",
-    slug: "cloudsync-dashboard",
+    title: "Beanie - Management System",
+    slug: "beanie-management-system",
     description:
-      "Real-time infrastructure monitoring dashboard that aggregates metrics from AWS, GCP, and Azure into a single pane of glass. Features live WebSocket updates, customisable alert thresholds, and exportable PDF reports.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      "Beanie is a full-stack café management and ordering platform I built to simulate a real-world point-of-sale and kitchen workflow system. It supports three distinct user roles — customers, staff, and admins — each with their own tailored interface and access controls. Customers can browse a dynamic menu, customise orders with modifiers like milk type, size, and extras, and track their order using a unique pickup code. Staff receive live order updates through a real-time queue powered by Supabase Realtime, allowing them to advance orders from pending through to completion without ever refreshing the page. Admins have full control over the menu catalog, including creating and editing products with linked modifier groups and price adjustments. Built with Next.js 14 App Router, TypeScript, Supabase (PostgreSQL + Auth + Realtime), and Tailwind CSS, the project emphasises server-side rendering for performance, role-based middleware for security, and a polished, responsive UI with smooth Framer Motion animations throughout.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
     highlights: [
-      "Reduced incident response time by 40% across the engineering org",
-      "Handles 50k+ metric data points per minute with sub-200ms render",
-      "Role-based access control with SSO integration",
+      "Three distinct user roles — customer, staff, and admin — each with tailored access controls",
+      "Real-time order queue powered by Supabase Realtime with no page refreshes",
+      "Dynamic menu catalog with modifier groups and per-modifier price adjustments",
     ],
-    githubUrl: "https://github.com/username/cloudsync-dashboard",
-    liveUrl: "https://cloudsync-demo.vercel.app",
-    images: ["/projects/cloudsync-1.png"],
+    githubUrl: "https://github.com/jacquespieterse/beanie",
+    liveUrl: "https://mealplan-ai.app",
+    images: ["/images/customer_menu.png", "/images/admin-manage.png", "/images/admin_queue.png"],
     featured: true,
     problem:
-      "Engineering teams were juggling three separate cloud consoles to monitor infrastructure health. Incidents were missed because alerts lived in siloed systems, and there was no unified view of cross-cloud resource utilisation.",
+      "Café workflows are typically fragmented — customers order at a counter, staff track orders on paper or a basic screen, and admins manage menus through a separate back-office tool. There was no single platform that unified the customer experience, kitchen queue, and menu management into one cohesive system.",
     solution:
-      "Built a single dashboard that ingests metrics from AWS CloudWatch, GCP Monitoring, and Azure Monitor via a unified adapter layer. Real-time updates are pushed over WebSockets, and a configurable alerting engine notifies the right on-call engineer within seconds.",
+      "Built a role-based platform where each user type gets a purpose-built interface. Customers customise and place orders online; staff see a live kitchen queue that updates in real time via Supabase Realtime; admins manage the full menu catalog with nested modifier groups. Role enforcement is handled by middleware on the server, keeping each surface secure and focused.",
     features: [
-      "Unified metrics ingestion from AWS, GCP, and Azure",
-      "Live WebSocket-driven updates with sub-200ms render times",
-      "Customisable alert thresholds with Slack and PagerDuty integration",
-      "Role-based access control with SSO (SAML / OIDC)",
-      "Exportable PDF incident reports for stakeholder reviews",
+      "Customer-facing menu with modifiers (milk type, size, extras) and unique pickup code tracking",
+      "Live staff queue with real-time order status progression via Supabase Realtime",
+      "Admin catalog management with product creation, modifier groups, and price adjustments",
+      "Role-based access control enforced via Next.js middleware",
+      "Server-side rendering for fast initial loads and SEO-friendly pages",
     ],
     learnings: [
-      "Designing a provider-agnostic adapter pattern that scales to new cloud vendors without touching core logic",
-      "Optimising WebSocket fan-out for thousands of concurrent dashboard sessions",
-      "Balancing real-time data freshness against database write costs using batched inserts",
+      "Designing a role-based access system where middleware enforces boundaries without duplicating logic across pages",
+      "Using Supabase Realtime subscriptions to push order state changes to staff without polling",
+      "Modelling flexible menu data — products with optional modifier groups and per-option price deltas — in a relational schema",
     ],
   },
   {
@@ -76,7 +76,6 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/username/mealplan-ai",
     liveUrl: "https://mealplan-ai.app",
-    images: ["/projects/mealplan-1.png", "/projects/mealplan-2.png"],
     featured: true,
     problem:
       "People waste time and money planning meals each week. Existing apps either ignore dietary needs, don't account for budget, or require manual recipe entry. There was no solution that combined AI-generated menus with one-click grocery ordering.",

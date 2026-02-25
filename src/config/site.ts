@@ -17,7 +17,7 @@ export const siteConfig = {
 
   proofStrip: [
     { value: "2", label: "Years Experience" },
-    { value: "30+", label: "Projects Shipped" },
+    { value: "1", label: "Projects Shipped" },
     { value: "React & Next.js", label: "Primary Stack" },
     { value: "Microsoft Certified", label: "Cloud" },
   ],
@@ -25,71 +25,59 @@ export const siteConfig = {
   email: "hello@jacquespieterse.dev",
 
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/JacquesPieterse1",
+    linkedin: "https://www.linkedin.com/in/jacques-pieterse-9882b3250/",
     twitter: "https://x.com",
   },
 
   about: {
-    bio: "I'm a full-stack developer with 5+ years of experience building web and mobile applications. I specialise in React, TypeScript, and cloud-native architectures — with a focus on performance, accessibility, and clean code. When I'm not shipping features, I'm contributing to open-source or experimenting with AI tooling.",
+    bio: "I'm a full-stack developer with 2+ years of experience building web and mobile applications. I specialise in React, TypeScript, and cloud-native architectures — with a focus on performance, accessibility, and clean code. When I'm not shipping features, I'm contributing to open-source or experimenting with AI tooling.",
 
     skills: [
       {
         category: "Frontend",
-        items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
+        items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native", "Mudblazor", "Blazor"],
       },
       {
         category: "Backend",
-        items: ["Node.js", "Python", "FastAPI", "PostgreSQL", "Prisma"],
+        items: ["Node.js", "Transact SQL", ".NET"],
       },
       {
         category: "Cloud & DevOps",
-        items: ["AWS", "Docker", "Terraform", "GitHub Actions", "Vercel"],
+        items: ["Microsoft Azure", "AWS", "Vercel"],
       },
       {
         category: "Tools & Practices",
-        items: ["Git", "Vitest", "Playwright", "Figma", "Agile / Scrum"],
+        items: ["Git", "Figma", "Agile / Scrum"],
       },
     ],
 
     timeline: [
-      {
-        type: "work" as const,
-        title: "Senior Frontend Engineer",
-        organisation: "Acme Corp",
-        period: "2023 – Present",
-        description:
-          "Leading the frontend platform team. Migrated legacy Angular app to Next.js, reducing bundle size by 60% and improving Lighthouse scores to 95+.",
-      },
-      {
-        type: "work" as const,
-        title: "Full-Stack Developer",
-        organisation: "StartupX",
-        period: "2021 – 2023",
-        description:
-          "Built and maintained core product features across React, Node.js, and AWS. Shipped the real-time collaboration engine used by 10k+ daily active users.",
-      },
+      
       {
         type: "work" as const,
         title: "Junior Developer",
-        organisation: "Digital Agency Co",
+        organisation: "4Sight Holdings LTD",
         period: "2019 – 2021",
         description:
-          "Delivered 20+ client projects ranging from marketing sites to e-commerce platforms. Introduced component-driven development with Storybook.",
+          "Worked as a Junior Software Developer primarily within the .NET ecosystem, contributing to both web and mobile application development across client-facing and internal enterprise systems.",
       },
       {
         type: "education" as const,
-        title: "BSc Computer Science",
-        organisation: "University of Cape Town",
-        period: "2016 – 2019",
+        title: "Software Development Diploma",
+        organisation: "CTU Training Solutions",
+        period: "2020– 2022",
         description:
           "Graduated with distinction. Focused on distributed systems and human-computer interaction.",
       },
     ],
 
     certifications: [
-      { name: "AWS Certified Solutions Architect – Associate", year: "2023" },
-      { name: "AWS Certified Cloud Practitioner", year: "2022" },
+      { name: "Microsoft Certified: Azure Developer Associate", year: "2023" },
+      { name: "Microsoft Certified: Power Platform Fundamentals", year: "2023" },
+      { name: "Microsoft Certified: Azure Fundamentals", year: "2023" },
+      { name: "Microsoft Certified: Azure AI Engineer Associate", year: "2022" },
+      { name: "Microsoft Certified: Azure Database Administrator Associate", year: "2022" },
     ],
   },
 } as const;

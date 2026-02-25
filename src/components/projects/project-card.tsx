@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { GithubIcon } from "@/components/ui/github-icon";
 
 import type { Project } from "@/types";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +22,16 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="flex h-full flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      {project.images?.[0] && (
+        <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
+          <Image
+            src={project.images[0]}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="text-lg">
           <Link
@@ -51,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Github className="size-4" />
+            <GithubIcon />
             GitHub
           </a>
         </Button>

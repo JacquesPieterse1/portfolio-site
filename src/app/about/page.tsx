@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Briefcase, GraduationCap, Github, Linkedin, Twitter } from "lucide-react";
+import { Briefcase, GraduationCap, Linkedin, Twitter } from "lucide-react";
+import { GithubIcon } from "@/components/ui/github-icon";
 
 import { siteConfig } from "@/config/site";
 import { Badge } from "@/components/ui/badge";
@@ -31,7 +32,7 @@ export default function AboutPage() {
           <div className="mt-6 flex gap-3">
             <Button asChild variant="outline" size="sm">
               <a href={social.github} target="_blank" rel="noopener noreferrer">
-                <Github className="size-4" />
+                <GithubIcon />
                 GitHub
               </a>
             </Button>

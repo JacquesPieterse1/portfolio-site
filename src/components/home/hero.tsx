@@ -26,7 +26,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       {/* Soft gradient blob */}
-      <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 size-[600px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 size-150 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
